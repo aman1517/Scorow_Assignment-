@@ -23,13 +23,14 @@ table {
      cursor: pointer;
   }
   .sbmitbtn{
-    width: 200px;
+    width: 100px;
     height: 55px;
     margin: auto;
-    font-size: 35px;
+    font-size: 20px;
     background-color: aqua;
     color:green;
     border: none;
+    margin-top: 25px;
     border-radius: 10px;
   }
   .sbmitbtn:hover{
@@ -38,6 +39,49 @@ table {
 
   .form_container{
     border: 1px solid black;
-    width: 70%;
+    width: 50%;
     margin: auto;
+    padding: 40px 40px;
+    background-color: aqua;
+    box-sizing: border-box;
+    line-height: 0;
   }
+  .form_container>p{
+    font-size: 25px;
+    padding-top: 0px;
+    text-align: center;
+    margin-top: 0px;
+  }
+  input[type=text],[type=number] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .btn{
+    width: 15%;
+    background-color:black;
+    color: white;
+    border: none;
+    font-size: 35px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .searchBtn{
+    border: 2px solid red;
+    border-radius: 4px;
+    width: 50%;
+    height: 45px;
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 10px;
+  }
+  .title{
+    text-align: center;
+    color: chartreuse;
+  }
+  
+ 

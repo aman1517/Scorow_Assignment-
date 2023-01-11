@@ -6,3 +6,11 @@
     color: white;
     height: 55px;
 }
+.Nav_cont>p{
+    font-size: 20px;
+    
+}
+.routetag{
+    color: white;
+    border-bottom: red;
+}

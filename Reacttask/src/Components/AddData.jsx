@@ -68,16 +68,17 @@ const AddData = () => {
   return (
     <div>
      <div className='form_container'>
+     <p>Fill the users details</p>
      <form onSubmit={summitHandle}>
-        <label>Flat No:</label>
+        <label>Flat Number:</label>
         <input type="text" placeholder='Enter your Flat number' onChange={HandleChange} name="Flat_No" value={user.Flat_No} required/><br/>
         <label>First Name:</label>
         <input type="text" placeholder='Enter your First Name' onChange={HandleChange} name="Fname" value={user.Fname} required/><br/>
         <label>Last Name:</label>
         <input type="text" placeholder='Enter your Last Name' onChange={HandleChange} name="Lname" value={user.Lname} required/><br/>
-        <label>Phonr:</label>
+        <label>Phone No.:</label>
         <input type="number" placeholder='Enter phne Number' onChange={HandleChange} name="Phone" value={user.Phone} required/><br/>
-        <button>+</button>
+        <button className='btn'>+</button>
       </form>
      </div>
       <div className='name_List'>
