@@ -13,11 +13,15 @@ const defaultValue={
 
 const AddData = () => {
     const navigate=useNavigate()
+
+    //  hooks
     const [user,setUser]=useState(defaultValue)
     const [value,setValue]=useState([])
     const [active,setActie]=useState(false)
+    const [showbtn,setShowbtn]=useState(false)
+
+    // store the the in setState
     const HandleChange=(e)=>{
-       console.log(e.target.value)
        setUser({...user,[e.target.name] :e.target.value})
     }
     const header={"Access-Control-Allow-Orginal":"'"}
@@ -25,9 +29,10 @@ const AddData = () => {
         e.preventDefault()
        value.push(user)
        setUser(defaultValue)
-       console.log(value)
+       setShowbtn(true)
        
     }
+    // Remove data from Lists
     const HandleReove=(id)=>{
         setActie(!active)
        const new_List=value.filter((el,ind)=>ind !==id);
@@ -35,15 +40,16 @@ const AddData = () => {
        alert("User data Reomve Successfully")
     }
 
+    // post the data into database
     const HandleSumbint=()=>{
       value.map((el)=>{
-        const Flat_NO=el.Flat_NO;
+        const Flat_No=el.Flat_No;
         const Fname=el.Fname;
         const Lname=el.Lname;
         const Phone=el.Phone
 
-        axios.post("https://6322fad1362b0d4e7dd81cf0.mockapi.io/CityNames",{
-            Flat_NO,
+        axios.post("http://localhost:4500/postdata",{
+            Flat_No,
             Fname,
             Lname,
             Phone,
@@ -61,13 +67,19 @@ const AddData = () => {
 
   return (
     <div>
-      <form onSubmit={summitHandle}>
-        <input type="number" placeholder='Enter your Flat number' onChange={HandleChange} name="Flat_No" value={user.Flat_No} required/><br/>
+     <div className='form_container'>
+     <form onSubmit={summitHandle}>
+        <label>Flat No:</label>
+        <input type="text" placeholder='Enter your Flat number' onChange={HandleChange} name="Flat_No" value={user.Flat_No} required/><br/>
+        <label>First Name:</label>
         <input type="text" placeholder='Enter your First Name' onChange={HandleChange} name="Fname" value={user.Fname} required/><br/>
+        <label>Last Name:</label>
         <input type="text" placeholder='Enter your Last Name' onChange={HandleChange} name="Lname" value={user.Lname} required/><br/>
+        <label>Phonr:</label>
         <input type="number" placeholder='Enter phne Number' onChange={HandleChange} name="Phone" value={user.Phone} required/><br/>
         <button>+</button>
       </form>
+     </div>
       <div className='name_List'>
       <table>
   <tr>
@@ -94,8 +106,9 @@ const AddData = () => {
         })
       
     }
-    <button onClick={HandleSumbint}>Submit</button>
 </table>
+          <button onClick={HandleSumbint} className="sbmitbtn" style={{display:showbtn?"block":"none"}}>Submit</button>
+
       </div>
     </div>
   );

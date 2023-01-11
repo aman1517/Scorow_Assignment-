@@ -4,10 +4,12 @@ import "../Style/AddData.css"
 
 const GetData = () => {
     const [user,setUser]=useState([])
+    const [inpText,setInpText]=useState("")
 
     const fetchData=()=>{
-        axios.get("https://6322fad1362b0d4e7dd81cf0.mockapi.io/CityNames").then((res)=>{
+        axios.get("http://localhost:4500/getuserdata").then((res)=>{
             setUser(res.data)
+            console.log(res.data)
         }).catch((err)=>{
             console.log("err")
         })
@@ -16,9 +18,18 @@ const GetData = () => {
     useEffect(()=>{
         fetchData()
     },[])
+
+    const serachHandle=(e)=>{
+        setInpText(e.target.value)
+      }
   return (
     <div>
         <div className='name_List'>
+        <div >
+    
+    <input type="search" className="form-control" placeholder='serch here' onChange={serachHandle}/>
+    
+  </div>
       <table>
   <tr>
     <th>Id</th>
@@ -30,6 +41,8 @@ const GetData = () => {
   </tr>
   
     {
+     
+        
         user.map((e,index)=>{
             return(
                 <tr>

@@ -2,8 +2,9 @@
 import './App.css';
 import AddData from './Components/AddData';
 import Navbar from './Components/Navbar';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import GetData from './Components/GetData';
+import PageNotFond from './Components/PageNotFond';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<AddData/>}/>
         <Route path='/getdata' element={<GetData/>}/>
+        <Route path='*' element={<PageNotFond/>}/>
       </Routes>
    
    

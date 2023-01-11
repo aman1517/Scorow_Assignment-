@@ -1,18 +1,19 @@
 .name_List{
-    border: 1px solid red;
     width: 70%;
     margin: auto;
+    
 }
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
+    padding-left: 25px;
     width: 100%;
   }
   
   td, th {
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+    text-align: center;
+   
   }
   
   tr:nth-child(even) {
@@ -20,4 +21,23 @@ table {
   }
   .delIcon>i:hover{
      cursor: pointer;
+  }
+  .sbmitbtn{
+    width: 200px;
+    height: 55px;
+    margin: auto;
+    font-size: 35px;
+    background-color: aqua;
+    color:green;
+    border: none;
+    border-radius: 10px;
+  }
+  .sbmitbtn:hover{
+    cursor: pointer;
+  }
+
+  .form_container{
+    border: 1px solid black;
+    width: 70%;
+    margin: auto;
   }
