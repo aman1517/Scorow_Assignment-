@@ -1,0 +1,8 @@
+.Nav_cont{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    height: 55px;
+}

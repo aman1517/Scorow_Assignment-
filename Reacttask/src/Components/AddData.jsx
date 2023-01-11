@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import "../Style/AddData.css"
+
 const defaultValue={
     Flat_No:"",
     Fname:"",
@@ -10,6 +12,7 @@ const defaultValue={
 
 
 const AddData = () => {
+    const navigate=useNavigate()
     const [user,setUser]=useState(defaultValue)
     const [value,setValue]=useState([])
     const [active,setActie]=useState(false)
@@ -50,6 +53,8 @@ const AddData = () => {
              
           })
       })
+      alert("Data added in DB succesfully")
+      navigate('/getdata')
       
     }
    
