@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <div className='Nav_cont'>
         <Link to="/"><p className='routetag'>Home</p></Link>
-        <p>Welocme to Scorow</p>
+        <p>Welcome to Scorow</p>
         <Link to="/getdata"><p className='routetag'>All User</p></Link>
       </div>
     </div>

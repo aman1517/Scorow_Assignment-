@@ -28,7 +28,7 @@ const GetData = () => {
 
     // delete the data from database
    const HandleDelte=(id)=>{
-     console.log(id)
+   
     axios.delete(`https://clever-gray-pantsuit.cyclic.app/${id}`).then(()=>{
         fetchData()
     }) 

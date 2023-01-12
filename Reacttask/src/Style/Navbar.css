@@ -1,13 +1,15 @@
 .Nav_cont{
     display: flex;
     justify-content: space-around;
-    border: 1px solid red;
-    background-color: red;
+    border: 1px solid rgb(75, 12, 135);
+    background-color:  rgb(75, 12, 135);
     color: white;
     height: 55px;
+    border-radius: 10px;
 }
 .Nav_cont>p{
     font-size: 20px;
+    font-weight: 500;
     
 }
 .routetag{

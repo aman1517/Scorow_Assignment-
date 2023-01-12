@@ -68,7 +68,7 @@ const AddData = () => {
   return (
     <div>
      <div className='form_container'>
-     <p>Fill the users details</p>
+     <p>Fill the user details</p>
      <form onSubmit={summitHandle}>
         <label>Flat Number:</label>
         <input type="text" placeholder='Enter your Flat number' onChange={HandleChange} name="Flat_No" value={user.Flat_No} required/><br/>

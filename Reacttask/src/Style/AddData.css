@@ -45,6 +45,9 @@ table {
     background-color: aqua;
     box-sizing: border-box;
     line-height: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
   }
   .form_container>p{
     font-size: 25px;
