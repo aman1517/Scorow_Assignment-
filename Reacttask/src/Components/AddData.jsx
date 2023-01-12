@@ -48,7 +48,7 @@ const AddData = () => {
         const Lname=el.Lname;
         const Phone=el.Phone
 
-        axios.post("http://localhost:4500/postdata",{
+        axios.post("https://clever-gray-pantsuit.cyclic.app/postdata",{
             Flat_No,
             Fname,
             Lname,

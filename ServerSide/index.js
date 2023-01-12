@@ -1,7 +1,7 @@
 const express=require('express')
 const cors=require('cors')
 const bodyParser=require('body-parser')
-const {Connection}=require("./Db/db.js")
+const {Connection}=require("./db/DB.js")
 const Users=require('./Module/UserSchema.js')
 const app=express()
 app.use(cors())
@@ -32,6 +32,15 @@ app.post("/postdata",async(req,res)=>{
     }
     catch(er){
        res.status(409).json({message:err.message})
+    }
+})
+app.delete("/:id",async(req,res)=>{
+   
+    try{
+     await Users.deleteOne({_id:req.params.id})
+    }
+    catch(err){
+         res.status(409).json({message:err.message})
     }
 })
 app.listen(port,()=>{

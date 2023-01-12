@@ -8,7 +8,7 @@ const GetData = () => {
 
 //    Get Method using Axos
     const fetchData=()=>{
-        axios.get("http://localhost:4500/getuserdata").then((res)=>{
+        axios.get("https://clever-gray-pantsuit.cyclic.app/getuserdata").then((res)=>{
             setUser(res.data)
             console.log(res.data)
         }).catch((err)=>{
@@ -25,6 +25,14 @@ const GetData = () => {
     const serachHandle=(e)=>{
         setInpText(e.target.value)
       }
+
+    // delete the data from database
+   const HandleDelte=(id)=>{
+     console.log(id)
+    axios.delete(`https://clever-gray-pantsuit.cyclic.app/${id}`).then(()=>{
+        fetchData()
+    }) 
+   }
   return (
     <div>
         <div className='name_List'>
@@ -39,6 +47,7 @@ const GetData = () => {
     <th>FName</th>
     <th>LName</th>
     <th>Phone</th>
+    <th>Action</th>
   </tr>
   
     {
@@ -59,6 +68,7 @@ const GetData = () => {
                 <td>{e.Fname}</td>
                 <td>{e.Lname}</td>
                 <td>{e.Phone}</td>
+                <td className='delIcon'><i className="fa fa-trash-o" style={{fontSize:"35px",color: "red"}} onClick={()=>HandleDelte(e._id) } /></td>
                 </tr>
             )
         })
