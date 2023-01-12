@@ -77,7 +77,7 @@ const AddData = () => {
         <label>Last Name:</label>
         <input type="text" placeholder='Enter your Last Name' onChange={HandleChange} name="Lname" value={user.Lname} required/><br/>
         <label>Phone No.:</label>
-        <input type="number" placeholder='Enter phne Number' onChange={HandleChange} name="Phone" value={user.Phone} required/><br/>
+        <input type="number" placeholder='Enter phne Number' onChange={HandleChange} name="Phone" value={user.Phone} required minlength="10" maxlength="12"/><br/>
         <button className='btn'>+</button>
       </form>
      </div>

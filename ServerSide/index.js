@@ -6,6 +6,7 @@ const Users=require('./Module/UserSchema.js')
 const app=express()
 app.use(cors())
 app.use(bodyParser.json({extended:true}))
+const port=process.env.PORT ||4500;
 
 Connection()
 
@@ -33,6 +34,6 @@ app.post("/postdata",async(req,res)=>{
        res.status(409).json({message:err.message})
     }
 })
-app.listen(4500,()=>{
-    console.log("listing on port 45000")
+app.listen(port,()=>{
+    console.log(`listing on port ${port}`)
 })
